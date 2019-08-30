@@ -1,4 +1,3 @@
-import api from './api';
 
 class App {
   constructor() {
@@ -20,12 +19,12 @@ class App {
 
     const repoInput = this.inputEl.value;
 
-    if(repoInput.length === 0)
+    if (repoInput === 0)
       return;
-
+    
     const response = await api.get(`/repos/${repoInput}`);
 
-    console.log(response);
+      console.log(response)
 
     this.repositories.push({
       name: 'rockeatseat.com.br',
