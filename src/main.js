@@ -1,4 +1,4 @@
-
+import api from './api';
 class App {
   constructor() {
     this.repositories = [];
