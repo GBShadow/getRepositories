@@ -1,9 +1,12 @@
+import api from './api';
+
 class App {
   constructor() {
     this.repositories = [];
 
     this.formEl = document.getElementById('repo-form');
-    this.ListEl = document.getElementById('repo-list');
+    this.inputEl = document.querySelector('input[name=repository]');
+    this.listEl = document.getElementById('repo-list');
 
     this.registerHandlers();
   }
@@ -12,8 +15,18 @@ class App {
     this.formEl.onsubmit = event => this.addRepository(event);
   }
 
-  addRepository(event) {
+  async addRepository(event) {
     event.preventDefault();
+
+    const repoInput = this.inputEl.value;
+
+    if(repoInput.length === 0)
+      return;
+
+    const response = await api.get(`/repos/${repoInput}`);
+
+    console.log(response);
+
     this.repositories.push({
       name: 'rockeatseat.com.br',
       description: 'Tire a sua ideia do papel e crie a sua startup.',
@@ -25,7 +38,7 @@ class App {
   }
 
   render(){
-    this.ListEl.innerHTML = '';
+    this.listEl.innerHTML = '';
 
     this.repositories.forEach(repo => {
       let imgEl = document.createElement('img');
@@ -47,7 +60,7 @@ class App {
       listItemEl.appendChild(descriptionEl);
       listItemEl.appendChild(linkEl);
 
-      this.ListEl.appendChild(listItemEl);
+      this.listEl.appendChild(listItemEl);
     });
   }
 }
