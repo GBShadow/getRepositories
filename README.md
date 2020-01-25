@@ -17,5 +17,6 @@ link para acessar.
 
 ## Como usar
 
-E só clonar o repositório e executar o HTML
+E só clonar o repositório
+baixar a dependecia **axios** e executar o HTML
 no navegador.
