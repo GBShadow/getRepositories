@@ -1,6 +1,21 @@
 # getRepositories
-A simple app for get repositories of github and show description and link for access.
 
-This app was coded using JavaScript,
-Its structure was written using classes 
-babel and webpack were used to configure and be compatible using any browser.
+## Sobre
+
+Este e um simples app escrito em javascript,
+Utilizando classes entre outras funções do
+EcmaScript 6.
+
+
+## Funcionamento
+
+Este app precisa está conectado a internet,
+só precisa digitar o nome de um repositório 
+que ele irá pesquisar no github e trazer
+o repositório com sua descrição, imagem e 
+link para acessar.
+
+## Como usar
+
+E só clonar o repositório e executar o HTML
+no navegador.
